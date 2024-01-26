@@ -1,0 +1,53 @@
+html {
+  box-sizing: border-box;
+  -moz-text-size-adjust: none; // Specifically to prevent a specific issue in landscape on iOS
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; // inherit from html to make it easier to override by setting it on a parent element
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5; // Mostly just to make it consistent across browsers. Something like * { calc(1em + 0.5rem) } would be a more reasonable default for both body and headings, but could break third-party code that assumes line-height is inheritable. Alternatively, you could specify a shorter line-height for headings and interactive elements but the desired value could depent on the used font.
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto; // To keep aspect ratio
+  vertical-align: middle; // Remove extra spacing because of baseline alignment (similar to what why you might make it display: block)
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word; // Prevents long words from overflowing their containers and break layout if no soft wrap opportunitites are present
+}
+
+ul,
+ol {
+  list-style: none; // Note that apparently Safari will remove semantics for lists if you remove list styling, so you might want to add a [role='list'] for accessibility in web projects
+  padding-inline-start: 0;
+}
