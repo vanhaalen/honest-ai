@@ -1,0 +1,38 @@
+:host {
+  overflow: hidden;
+  --token-number: 5;
+  --token-height: calc(100% / var(--token-number));
+}
+
+#spinner-display {
+  height: 100%;
+  position: relative;
+}
+
+#candidate-set {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.token {
+  flex: 0 0 var(--token-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+#highlight-frame {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: var(--token-height);
+  border: 10px solid hotpink;
+  border-radius: 20px;
+}

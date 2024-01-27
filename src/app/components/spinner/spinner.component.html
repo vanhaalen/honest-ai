@@ -1,0 +1,8 @@
+<div id="spinner-display" (click)="triggerSpin()">
+  <div id="candidate-set" #animationTarget>
+    @for (token of candidateSet; track token) {
+    <div class="token">{{ token }}</div>
+    }
+  </div>
+  <div id="highlight-frame"></div>
+</div>
